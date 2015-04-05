@@ -1,34 +1,40 @@
-var navStyle = {
-    
-    position: 'fixed',
+var bannerStyle = {
     WebkitTransition: 'all', // note the capital 'W' here
     msTransition: 'all', // 'ms' is the only lowercase vendor prefix
-    backgroundColor: '#2D2D2D',
-    outerWidth: 200,
-    height: 60,
-    top: '0',
-    left: '0',
-    right: '0'
+    textAlign:'center',
+    marginTop: '15'
+}
+
+var containerStyle = {
 };
 
-
 var linkStyle = {
-  boxSizing: 'content-box',
-  display: 'inline-block',
-  color: '#ddd',
-    width:'100',
-    fontFamily:'Century Gothic'
+    display: 'inline-block',
+    color: '#ddd',
+    width:'150',
+    top: '10',
+    textDecoration: 'none'
 };
 
 var Banner = React.createClass({
     render: function(){
         return(
-            <nav style={navStyle}>
+            <nav style={bannerStyle}>
+                <LinkContainer />
+            </nav>
+        );
+    }
+});
+
+var LinkContainer = React.createClass({
+    render: function(){
+        return(
+            <div style={containerStyle}>
                 <Sectionlink name="About"/>
                 <Sectionlink name="Galary"/>
                 <Sectionlink name="Stories"/>
                 <Sectionlink name="Contact"/>
-            </nav>
+            </div>
         );
     }
 });
@@ -36,13 +42,13 @@ var Banner = React.createClass({
 var Sectionlink = React.createClass({
     render: function(){
         return(
-            <li style={linkStyle}>
+            <a href="/#" style={linkStyle} onmouseover>
             {this.props.name}
-            </li>
+            </a>
         );
     }
 });
 
 React.render(
-<Banner />, document.getElementById('content')
+<Banner />, document.getElementById('header')
 );
