@@ -30,10 +30,10 @@ var LinkContainer = React.createClass({
     render: function(){
         return(
             <div style={containerStyle}>
-                <Sectionlink name="About"/>
-                <Sectionlink name="Galary"/>
-                <Sectionlink name="Stories"/>
-                <Sectionlink name="Contact"/>
+                <Sectionlink name="About" location="#about"/>
+                <Sectionlink name="Customers" location="#customer"/>
+                <Sectionlink name="Galary" location="#galary"/>
+                <Sectionlink name="Contact" location="#contact"/>
             </div>
         );
     }
@@ -42,7 +42,7 @@ var LinkContainer = React.createClass({
 var Sectionlink = React.createClass({
     render: function(){
         return(
-            <a href="/#" style={linkStyle} onmouseover>
+            <a href={this.props.location} style={linkStyle}>
             {this.props.name}
             </a>
         );
@@ -52,3 +52,12 @@ var Sectionlink = React.createClass({
 React.render(
 <Banner />, document.getElementById('header')
 );
+
+$('a').click(function(){
+    var target = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(target).offset().top
+    }, 2000, "easeInOutQuart");
+    //alert($(this).attr('href'));
+    return false;
+});
