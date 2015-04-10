@@ -19,8 +19,8 @@ var contentStyle = {
     color: 'black',
     position: 'absolute',
     top: '100',
-    left: '300',
-    right: '300',
+    left: '200',
+    right: '200',
     background: 'rgba(255, 255, 255, 0.75)',
     boxShadow: '10 2 5 rgba(0, 0, 0, 0.9)',
     borderRadius: '5',
@@ -54,5 +54,5 @@ var About = React.createClass({
 
 React.render(
     <About />,
-    document.getElementById('content')
+    document.getElementById('about')
 );

@@ -1,3 +1,9 @@
+#galary .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .aboutStyle {
   color: "white";
   background: #2d2d2d;
@@ -10,6 +16,7 @@
     background-color: #171616;
     width: 100%;
     font-family: "Century Gothic";
+    z-index: 1;
 }
 
 .body{
